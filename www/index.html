@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * data: https://api.themoviedb.org gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content:;fmedia-src mediastream; img-src 'self' data: blob: cdvphotolibrary:">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Include jQuery Mobile stylesheets -->
+            <link rel="stylesheet" href="jquerymobile/jquery.mobile-1.4.5.min.css">
+
+            <!-- Include the jQuery library -->
+            <script src="js/jquery-2.1.0.js"></script>
+
+            <!-- Include the jQuery Mobile library -->
+            <script src="jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+        
+    </head>
+    <body>
+
+    <!-- Main page -->
+        <div data-role="page" id="mainpage">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Movies</h1>
+      <a data-icon="star" class="ui-btn-right favlistbutton"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Favorites</span></span></a>
+  </div>
+
+  <div data-role="main" class="ui-content" class="body">
+      <ul data-role="listview" id="mylist"></ul>
+  </div>
+
+        </div>
+
+
+
+   <!-- Ficha película -->
+            <div data-role="page" id="ficha">
+
+                <div data-role="header" data-theme="b">
+                    <a href="#mainpage"  data-icon="home" class="ui-btn ui-icon-home ui-btn-icon-left" data-iconpos="notext" data-direction="reverse"  data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+                    <h3 class="movietitle" style="text-transform: uppercase;"></h3>
+                </div><!-- /header -->
+
+                <div role="main" class="ui-content">
+                    <div id="image">[Poster]</div>
+                    <h2 class="movietitle"><span style="color:grey;">Title</span></h2>
+                    <p id="overview"><strong>Overview: </strong></p>
+                    <p id="runtime"><strong>Runtime: </strong></p>
+                    <p id="genres"><strong>Genres: </strong></p>
+
+                    <div id="addfav"><button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-star">Add to favorites</button></div>
+
+
+                    <a href="#mainpage" data-transition="pop" data-direction="reverse" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-left ui-btn-b"><span class="ui-icon-caret-1-b">&nbsp;</span> Back to movies list</a>
+                </div><!-- /content -->
+
+                <div data-role="footer" data-position="fixed">
+                    <h5>Powered by TheMovieDB - Designed by Eric S.</h5>
+                </div><!-- /footer -->
+            </div><!-- /ficha película -->
+
+
+
+
+    <!-- favorite list -->
+    <div data-role="page" id="favs">
+
+        <div data-role="header">
+            <a href="#mainpage"  data-icon="home" class="ui-btn ui-icon-home ui-btn-icon-left" data-iconpos="notext" data-direction="reverse"  data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+            <h1>My favorite movies</h1>
+        </div>
+
+        <div data-role="main" class="ui-content" class="body">
+            <ul data-role="listview" id="favlist"></ul>
+        </div>
+
+    </div>
+
+
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ericsg1.movies"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.ericsg1.movies"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ericsg1.movies"
+    }
+  },
+  "dependent_plugins": {}
+}
